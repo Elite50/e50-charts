@@ -139,6 +139,7 @@ angular.module('E50Charts')
     
     if(!type) {
       alert("Please select a chart type to transform the data");
+      return;
     }
     
     if(type === 'pie' || type === 'donut') {

@@ -1,5 +1,5 @@
 angular.module('E50Charts')
-  .directive('e50Chart', function($timeout, E50ChartFactory) {
+  .directive('e50Chart', function($timeout, E50ChartFactory, $rootScope) {
     var template = [
       '<div class="e50-charts">',
         '<div class="chart"></div>',
@@ -39,7 +39,9 @@ angular.module('E50Charts')
         scope.stack = chart.stack.bind(chart);
         scope.unstack = chart.unstack.bind(chart);
 
-        scope.$emit(scope.chart, chart);
+        if(scope.chart) {
+          $rootScope.$broadcast(scope.chart, chart);
+        }
       }
     };
   });

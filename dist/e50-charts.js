@@ -1,6 +1,6 @@
 angular.module('E50Charts', []);
 angular.module('E50Charts')
-  .directive('e50Chart', ["$timeout", "E50ChartFactory", function($timeout, E50ChartFactory) {
+  .directive('e50Chart', ["$timeout", "E50ChartFactory", "$rootScope", function($timeout, E50ChartFactory, $rootScope) {
     var template = [
       '<div class="e50-charts">',
         '<div class="chart"></div>',
@@ -40,7 +40,9 @@ angular.module('E50Charts')
         scope.stack = chart.stack.bind(chart);
         scope.unstack = chart.unstack.bind(chart);
 
-        scope.$emit(scope.chart, chart);
+        if(scope.chart) {
+          $rootScope.$broadcast(scope.chart, chart);
+        }
       }
     };
   }]);
@@ -185,6 +187,7 @@ angular.module('E50Charts')
     
     if(!type) {
       alert("Please select a chart type to transform the data");
+      return;
     }
     
     if(type === 'pie' || type === 'donut') {
