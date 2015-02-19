@@ -1,14 +1,18 @@
 angular.module('E50Charts', []);
 angular.module('E50Charts')
   .directive('e50Chart', ["$timeout", "E50ChartFactory", function($timeout, E50ChartFactory) {
-
+    var template = [
+      '<div class="e50-charts">',
+        '<div class="chart"></div>',
+      '</div>'
+    ];
     return {
       scope: {
         data: '=',
         xaxis: "=?",
         chart: '=?'
       },
-      templateUrl: '../src/templates/bar-chart.html',
+      template: template.join(""),
       link: function(scope, elm) {
 
         var chart = E50ChartFactory.newInstance();

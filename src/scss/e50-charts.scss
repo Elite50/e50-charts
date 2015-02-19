@@ -1,0 +1,85 @@
+$primary-blue: #00aeef;
+$primary-blue-dk: #00a3ec;
+$primary-blue-dk-dk: #1c9dd7;
+$silverchalice: #999999;
+$dovegray: #666;
+$mineshaft: #333;
+$border-grey: #e2e2e2;
+$mineshaft-dk: #444444;
+$wildsand:#f7f7f7;
+$mercury: #e7e7e7;
+$silverchalice-dk: #888888;
+$silver: #cccccc;
+$charlotte: #e4f6fd;
+$mercury-dk: #e9e9e9;
+$flamingo: #e95929;
+$wildsand-dk: #f8f8f8;
+$emerald: #17c977;
+
+.e50-charts {
+  .c3 .domain {
+    stroke: $mercury;
+  }
+
+  text tspan {
+    fill: $dovegray;
+  }
+
+  .c3 .tick line {
+    stroke: $primary-blue;
+    stroke-width: 1px;
+  }
+
+  .c3-line {
+    stroke-width: 2px;
+  }
+
+  .c3-grid line {
+    stroke: $mercury;
+  }
+
+  .c3-legend-item text {
+    fill: $dovegray;
+  }
+
+  .c3-shapes .c3-circle {
+    opacity: 1 !important;
+  }
+
+  .c3-tooltip-container {
+    font-family: 'Helvetica Neue';
+    border: 1px solid $mercury;
+    
+    .c3-tooltip {
+      box-shadow: none;
+      opacity: 1;
+
+      .value {
+        font-weight: bold;
+      }
+    }
+
+    th {
+      background-color: $wildsand;
+      color: $dovegray;
+      border-bottom: 1px solid $mercury;
+      font-weight: normal;
+      text-transform: uppercase;
+      text-align:center;
+      font-size:10px;
+    }
+
+    tr {
+      border: 0;
+      td {
+        border: 0;
+        color: $dovegray;
+      }
+    }
+  }
+
+  select {
+    width: 120px;
+    margin-bottom: 10px;
+  }
+}
