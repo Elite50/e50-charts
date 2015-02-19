@@ -38,6 +38,8 @@ angular.module('E50Charts')
         scope.executeTransform = chart.executeTransform.bind(chart);
         scope.stack = chart.stack.bind(chart);
         scope.unstack = chart.unstack.bind(chart);
+
+        scope.chart = chart;
       }
     };
   });
