@@ -10,7 +10,8 @@ angular.module('E50Charts')
       scope: {
         data: '=',
         xaxis: "=?",
-        chart: '=?'
+        chart: '=?',
+        override: "=?"
       },
       template: template.join(""),
       link: function(scope, elm) {
@@ -27,7 +28,7 @@ angular.module('E50Charts')
           }
         }
 
-        chart.generate();
+        chart.generate(scope.override);
 
         scope.chartTypes = chart.chartTypes;
         var ids = angular.copy(chart.dataIds);

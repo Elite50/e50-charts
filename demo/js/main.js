@@ -25,6 +25,7 @@ app.controller('MainCtrl', function($scope) {
       x: ['2014-10-10', '2015-10-10', '2016-10-10', '2017-10-10']
     },
     isTimeseries: true,
+    dateFormate: '%Y-%m-%d',
     tickFormat: '%Y' // the format of how you want it displayed on the chart
   };
 
