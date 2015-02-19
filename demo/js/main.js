@@ -29,4 +29,8 @@ app.controller('MainCtrl', function($scope) {
     tickFormat: '%Y' // the format of how you want it displayed on the chart
   };
 
+  $scope.$on('newChart', function(event, chart) {
+    console.log(chart);
+  });
+
 });

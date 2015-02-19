@@ -9,7 +9,7 @@ angular.module('E50Charts')
       scope: {
         data: '=',
         xaxis: "=?",
-        chart: '=?',
+        chart: '@',
         override: "=?"
       },
       template: template.join(""),
@@ -39,7 +39,7 @@ angular.module('E50Charts')
         scope.stack = chart.stack.bind(chart);
         scope.unstack = chart.unstack.bind(chart);
 
-        scope.chart = chart;
+        scope.$emit(scope.chart, chart);
       }
     };
   });
