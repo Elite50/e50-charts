@@ -1,9 +1,9 @@
 angular.module('E50Charts')
-.factory('E50Chart', function() {
+.factory('E50Chart', function(E50ChartConfig) {
 
   function drawChart() {
     this.main.append('rect')
-      .style('fill', 'white')
+      .style('fill', E50ChartConfig.overlayColor)
       .attr('x', 0.5)
       .attr('y', -0.5)
       .attr('width', this.width)

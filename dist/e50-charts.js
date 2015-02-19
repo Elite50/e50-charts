@@ -47,11 +47,11 @@ angular.module('E50Charts')
     };
   }]);
 angular.module('E50Charts')
-.factory('E50Chart', function() {
+.factory('E50Chart', ["E50ChartConfig", function(E50ChartConfig) {
 
   function drawChart() {
     this.main.append('rect')
-      .style('fill', 'white')
+      .style('fill', E50ChartConfig.overlayColor)
       .attr('x', 0.5)
       .attr('y', -0.5)
       .attr('width', this.width)
@@ -234,13 +234,19 @@ angular.module('E50Charts')
   };
 
   return E50Chart;
+}]);
+
+
+
+
+
+
+angular.module('E50Charts')
+.factory('E50ChartConfig', function() {
+  return {
+    overlayColor: '#ffffff'
+  };
 });
-
-
-
-
-
-
 angular.module('E50Charts')
 .factory('E50ChartFactory', ["E50Chart", function(E50Chart) {
   return {
