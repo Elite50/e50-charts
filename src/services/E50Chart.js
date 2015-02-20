@@ -38,7 +38,11 @@ angular.module('E50Charts')
         columns: [],
         types: {}
       },
-      axis: {},
+      axis: {
+        y: {
+          format: d3.format(',')
+        }
+      },
       tooltip: {
         show:true
       },
