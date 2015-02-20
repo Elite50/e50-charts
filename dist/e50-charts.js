@@ -93,7 +93,9 @@ angular.module('E50Charts')
       },
       axis: {
         y: {
-          format: d3.format(',')
+          tick: {
+            format: d3.format(',')
+          }
         }
       },
       tooltip: {
