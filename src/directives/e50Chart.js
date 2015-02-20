@@ -11,7 +11,8 @@ angular.module('E50Charts')
         xaxis: "=?",
         yaxis: "=?",
         chart: '@',
-        override: "=?"
+        override: "=?",
+        types: "=?"
       },
       template: template.join(""),
       link: function(scope, elm) {
@@ -30,6 +31,10 @@ angular.module('E50Charts')
 
         if(scope.yaxis) {
           chart.config.axis.y = scope.yaxis;
+        }
+
+        if(scope.types) {
+          chart.chartTypes = scope.types;
         }
 
         chart.generate(scope.override);
