@@ -21,7 +21,7 @@ angular.module('E50Charts')
     this.dataChartTypes = {};
     this.chartElm = null;
     this.dataIds = [];
-    this.chartTypes = {
+    this.allChartTypes = {
       'pie': 'Pie',
       'donut': 'Donut',
       'bar': 'Bar',
@@ -33,6 +33,7 @@ angular.module('E50Charts')
       'area-spline': 'Area Spline',
       'scatter': 'Scatter'
     };
+    this.chartTypes = E50ChartConfig.chartTypes || this.allChartTypes;
     this.config = {
       data: {
         columns: [],

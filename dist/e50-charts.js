@@ -12,8 +12,7 @@ angular.module('E50Charts')
         xaxis: "=?",
         yaxis: "=?",
         chart: '@',
-        override: "=?",
-        types: "=?"
+        override: "=?"
       },
       template: template.join(""),
       link: function(scope, elm) {
@@ -32,10 +31,6 @@ angular.module('E50Charts')
 
         if(scope.yaxis) {
           chart.config.axis.y = scope.yaxis;
-        }
-
-        if(scope.types) {
-          chart.chartTypes = scope.types;
         }
 
         chart.generate(scope.override);
@@ -79,7 +74,7 @@ angular.module('E50Charts')
     this.dataChartTypes = {};
     this.chartElm = null;
     this.dataIds = [];
-    this.chartTypes = {
+    this.allChartTypes = {
       'pie': 'Pie',
       'donut': 'Donut',
       'bar': 'Bar',
@@ -91,6 +86,7 @@ angular.module('E50Charts')
       'area-spline': 'Area Spline',
       'scatter': 'Scatter'
     };
+    this.chartTypes = E50ChartConfig.chartTypes || this.allChartTypes;
     this.config = {
       data: {
         columns: [],
@@ -260,7 +256,19 @@ angular.module('E50Charts')
 angular.module('E50Charts')
 .factory('E50ChartConfig', function() {
   return {
-    overlayColor: '#ffffff'
+    overlayColor: '#ffffff',
+    chartTypes : {
+      'pie': 'Pie',
+      'donut': 'Donut',
+      'bar': 'Bar',
+      'step': 'Step',
+      'area-step': 'Area Step',
+      'line': 'Line',
+      'area': 'Area',
+      'spline': 'Spline',
+      'area-spline': 'Area Spline',
+      'scatter': 'Scatter'      
+    }
   };
 });
 angular.module('E50Charts')
