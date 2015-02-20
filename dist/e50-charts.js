@@ -10,6 +10,7 @@ angular.module('E50Charts')
       scope: {
         data: '=',
         xaxis: "=?",
+        yaxis: "=?",
         chart: '@',
         override: "=?"
       },
@@ -26,6 +27,10 @@ angular.module('E50Charts')
           if(scope.xaxis.isTimeseries) {
             chart.enableTimeseries(scope.xaxis.dateFormat, scope.xaxis.tickFormat);
           }
+        }
+
+        if(scope.yaxis) {
+          chart.config.axis.y = scope.yaxis;
         }
 
         chart.generate(scope.override);

@@ -3,19 +3,19 @@ app.controller('MainCtrl', function($scope) {
 
   var d = $scope.data = {
     "Men": {
-      columns: [100,20,304,50,60],
+      columns: [100,20,304,50,1110],
       type: 'bar'
     },
     "Women": {
-      columns: [50,25,34,550,605],
+      columns: [50,25,34,550,1005],
       type: 'area-spline'
     },
     "Children": {
-      columns: [510,125,14,350,105],
+      columns: [510,125,14,350,1305],
       type: 'bar'
     },
     "Other": {
-      columns: [410,325,34,150,205],
+      columns: [410,325,34,150,1205],
       type: 'bar'
     }
   };
@@ -32,5 +32,11 @@ app.controller('MainCtrl', function($scope) {
   $scope.$on('newChart', function(event, chart) {
     console.log(chart);
   });
+
+  $scope.yAxis = {
+    tick: {
+      format: d3.format("$,")
+    }
+  };
 
 });
