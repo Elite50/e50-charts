@@ -16,6 +16,15 @@ angular.module('E50Charts')
       template: template.join(""),
       link: function(scope, elm) {
 
+        var body = $('body');
+        elm.find('.chart').hover(function() {
+          body.css('overflow', 'hidden');
+        }, function() {
+          $timeout(function() {
+            body.css('overflow', 'auto');
+          }, 200);
+        });
+
         var chart = E50ChartFactory.newInstance();
         chart.setElement(elm);
         chart.setScope(scope);
