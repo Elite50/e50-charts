@@ -39,15 +39,15 @@ app.controller('MainCtrl', function($scope) {
     }
   };
 
-    $scope.chartTypes = {
-      'bar': 'Bar',
-      'step': 'Step',
-      'area-step': 'Area Step',
-      'line': 'Line',
-      'area': 'Area',
-      'spline': 'Spline',
-      'area-spline': 'Area Spline',
-      'scatter': 'Scatter'
-    };  
+  $scope.chartTypes = {
+    'bar': 'Bar',
+    'step': 'Step',
+    'area-step': 'Area Step',
+    'line': 'Line',
+    'area': 'Area',
+    'spline': 'Spline',
+    'area-spline': 'Area Spline',
+    'scatter': 'Scatter'
+  };
 
 });

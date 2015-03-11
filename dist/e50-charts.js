@@ -74,7 +74,7 @@ angular.module('E50Charts')
       .attr('x', this.width)
       .attr('width', 0)
     .remove();    
-  };
+  }
 
   function E50Chart() {
     this.chart = null;
@@ -216,7 +216,7 @@ angular.module('E50Charts')
     }
 
     this[action](type, dataId);    
-  }
+  };
 
   E50Chart.prototype.transformAll = function(chartType) {
     this.chart.transform(chartType, this.dataIds);
