@@ -130,6 +130,7 @@ angular.module('E50Charts')
       },    
       oninit: function () {                
         drawChart.call(this);
+        E50Chart.adjustLegend.call(this);
       }      
     };
   }
