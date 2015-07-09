@@ -127,6 +127,7 @@ angular.module('E50Charts')
       },
       onresized: function () {
         drawChart.call(this);
+        E50Chart.adjustLegend.call(this);
       },    
       oninit: function () {                
         drawChart.call(this);
