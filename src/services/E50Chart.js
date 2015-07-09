@@ -71,6 +71,16 @@ angular.module('E50Charts')
       }      
     };
   }
+  
+  E50Chart.adjustLegend = function() {
+    var groups = angular.element(this.svg[0][0]).find('> g');
+    if(groups.length < 3) { return; }
+    var legend = groups[2];
+    setTimeout(function() {
+      var height = Math.ceil(groups[0].getBBox().height) + 2;
+      legend.setAttribute("transform", "translate(0, "+ height +")");
+    }, 50);
+  };
 
   E50Chart.prototype.setElement = function(elm) {
     this.element = elm;
