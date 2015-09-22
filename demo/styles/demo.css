@@ -2,7 +2,7 @@
   stroke: #e7e7e7; }
 
 text tspan {
-  fill: #666666; }
+  fill: #666; }
 
 .c3 .tick line {
   stroke: #00aeef;
@@ -15,7 +15,7 @@ text tspan {
   stroke: #e7e7e7; }
 
 .c3-legend-item text {
-  fill: #666666; }
+  fill: #666; }
 
 .c3-shapes .c3-circle {
   opacity: 1 !important; }
@@ -30,7 +30,7 @@ text tspan {
       font-weight: bold; }
   .c3-tooltip-container th {
     background-color: #f7f7f7;
-    color: #666666;
+    color: #666;
     border-bottom: 1px solid #e7e7e7;
     font-weight: normal;
     text-transform: uppercase;
@@ -40,8 +40,10 @@ text tspan {
     border: 0; }
     .c3-tooltip-container tr td {
       border: 0;
-      color: #666666; }
+      color: #666; }
 
 select {
   width: 120px;
   margin-bottom: 10px; }
+
+/*# sourceMappingURL=demo.css.map */

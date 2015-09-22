@@ -1,7 +1,7 @@
 .e50-charts .c3 .domain {
   stroke: #e7e7e7; }
 .e50-charts text tspan {
-  fill: #666666; }
+  fill: #666; }
 .e50-charts .c3 .tick line {
   stroke: #00aeef;
   stroke-width: 1px; }
@@ -10,7 +10,7 @@
 .e50-charts .c3-grid line {
   stroke: #e7e7e7; }
 .e50-charts .c3-legend-item text {
-  fill: #666666; }
+  fill: #666; }
 .e50-charts .c3-shapes .c3-circle {
   opacity: 1 !important; }
 .e50-charts .c3-tooltip-container {
@@ -23,7 +23,7 @@
       font-weight: bold; }
   .e50-charts .c3-tooltip-container th {
     background-color: #f7f7f7;
-    color: #666666;
+    color: #666;
     border-bottom: 1px solid #e7e7e7;
     font-weight: normal;
     text-transform: uppercase;
@@ -33,7 +33,9 @@
     border: 0; }
     .e50-charts .c3-tooltip-container tr td {
       border: 0;
-      color: #666666; }
+      color: #666; }
 .e50-charts select {
   width: 120px;
   margin-bottom: 10px; }
+
+/*# sourceMappingURL=e50-charts.css.map */

@@ -156,16 +156,14 @@ angular.module('E50Charts')
 
   E50Chart.prototype.setData = function(data) {
     var that = this;
-    Object.keys(data).forEach(function(key) {
+    angular.forEach(data, function(data, key) {
       if(that.dataIds.indexOf(key) === -1) {
         that.dataIds.push(key);
+        var dataColumns = angular.copy(data.columns);
+        dataColumns.unshift(key);
+        that.config.data.columns.push(dataColumns);
+        that.config.data.types[key] = data.type;
       }
-    });
-    angular.forEach(data, function(data, key) {
-      var dataColumns = angular.copy(data.columns);
-      dataColumns.unshift(key);
-      that.config.data.columns.push(dataColumns);
-      that.config.data.types[key] = data.type;
     });
   };
 
@@ -180,8 +178,9 @@ angular.module('E50Charts')
 
   E50Chart.prototype.enableXAxis = function(axisData) {
     if(axisData) {
+      axisData = angular.copy(axisData);
       var axisValues = axisData.x;
-      axisValues.unshift('x')
+      axisValues.unshift('x');
       this.config.data.columns.unshift(axisValues);
     }
     this.config.data.x = 'x';
