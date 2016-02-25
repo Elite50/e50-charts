@@ -73,7 +73,7 @@ angular.module('E50Charts')
     .transition().duration(1500)
       .attr('x', this.width)
       .attr('width', 0)
-    .remove();    
+    .remove();
   }
 
   function E50Chart() {
@@ -123,19 +123,19 @@ angular.module('E50Charts')
         expand: false
       },
       color: {
-        pattern: ['#00aeef', "#666666", "#eaa14b", '#71ac5f']
+        pattern: ['#dcc828', '#00aeef', '#df2770', '#512a79', '#92d3c9', '#3ab87a', '#0f6163', '#c8dc4a', '#0178a3', '#f04e2e', '#faa83b', '#015e80']
       },
       onresized: function () {
         drawChart.call(this);
         E50Chart.adjustLegend.call(this);
-      },    
-      oninit: function () {                
+      },
+      oninit: function () {
         drawChart.call(this);
         E50Chart.adjustLegend.call(this);
-      }      
+      }
     };
   }
-  
+
   E50Chart.adjustLegend = function() {
     var groups = angular.element(this.svg[0][0]).find('> g');
     if(groups.length < 3) { return; }
@@ -173,7 +173,7 @@ angular.module('E50Charts')
   };
 
   E50Chart.prototype.unload = function(dataId) {
-    this.chart.unload(dataId);  
+    this.chart.unload(dataId);
   };
 
   E50Chart.prototype.enableXAxis = function(axisData) {
@@ -216,17 +216,17 @@ angular.module('E50Charts')
   E50Chart.prototype.executeTransform = function(type, dataId) {
     var hasId = dataId.toLowerCase() !== "all" || !dataId;
     var action = hasId ? 'transform' : 'transformAll';
-    
+
     if(!type) {
       alert("Please select a chart type to transform the data");
       return;
     }
-    
+
     if(type === 'pie' || type === 'donut') {
       action = 'transformAll';
     }
 
-    this[action](type, dataId);    
+    this[action](type, dataId);
   };
 
   E50Chart.prototype.transformAll = function(chartType) {
