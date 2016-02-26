@@ -124,7 +124,7 @@ angular.module('E50Charts')
         expand: false
       },
       color: {
-        pattern: ['#dcc828', '#00aeef', '#df2770', '#512a79', '#92d3c9', '#3ab87a', '#0f6163', '#c8dc4a', '#0178a3', '#f04e2e', '#faa83b', '#015e80']
+        pattern: ['#00aeef', '#faa83b', '#3ab87a', '#f04e2e', '#0178a3', '#0f6163', '#dcc828', '#00a3ec', '#512a79', '#92d3c9', '#df2770', '#c8dc4a', '#015e80']
       },
       onresized: function () {
         drawChart.call(this);
