@@ -34,7 +34,7 @@ angular.module('E50Charts')
         if(scope.xaxis) {
           chart.enableXAxis(scope.xaxis.columns);
           if(scope.xaxis.isTimeseries) {
-            chart.enableTimeseries(scope.xaxis.dateFormat, scope.xaxis.tickFormat);
+            chart.enableTimeseries(scope.xaxis.dateFormat, scope.xaxis.tickFormat, scope.xaxis.tickCount);
           }
         }
 
@@ -60,6 +60,7 @@ angular.module('E50Charts')
       }
     };
   }]);
+
 angular.module('E50Charts')
 .factory('E50Chart', ["E50ChartConfig", function(E50ChartConfig) {
 
@@ -189,14 +190,15 @@ angular.module('E50Charts')
     };
   };
 
-  E50Chart.prototype.enableTimeseries = function(xFormat, outputFormat) {
+  E50Chart.prototype.enableTimeseries = function(xFormat, outputFormat, outputCount) {
     if(xFormat) {
       this.config.data.xFormat = xFormat;
     }
     this.config.axis.x = {
       type: 'timeseries',
       tick: {
-        format: outputFormat || xFormat
+        format: outputFormat || xFormat,
+        count: outputCount
       }
     };
   };

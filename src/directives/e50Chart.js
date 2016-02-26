@@ -33,7 +33,7 @@ angular.module('E50Charts')
         if(scope.xaxis) {
           chart.enableXAxis(scope.xaxis.columns);
           if(scope.xaxis.isTimeseries) {
-            chart.enableTimeseries(scope.xaxis.dateFormat, scope.xaxis.tickFormat);
+            chart.enableTimeseries(scope.xaxis.dateFormat, scope.xaxis.tickFormat, scope.xaxis.tickCount);
           }
         }
 

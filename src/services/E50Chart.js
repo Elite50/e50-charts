@@ -127,14 +127,15 @@ angular.module('E50Charts')
     };
   };
 
-  E50Chart.prototype.enableTimeseries = function(xFormat, outputFormat) {
+  E50Chart.prototype.enableTimeseries = function(xFormat, outputFormat, outputCount) {
     if(xFormat) {
       this.config.data.xFormat = xFormat;
     }
     this.config.axis.x = {
       type: 'timeseries',
       tick: {
-        format: outputFormat || xFormat
+        format: outputFormat || xFormat,
+        count: outputCount
       }
     };
   };
